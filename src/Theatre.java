@@ -5,6 +5,7 @@ public class Theatre {
         Actor actor = new Actor("Иван","Иванов", Gender.MALE, 185);
         Actor actor2 = new Actor("Петров","Петр", Gender.MALE, 172);
         Actor actor3 = new Actor("Сергей","Сергеев", Gender.MALE, 175);
+        Actor actor4 = new Actor("Иван","Иванов", Gender.MALE, 185);
         Actor actress = new Actor("Мария","Иванова", Gender.FEMALE, 165);
         Director director = new Director("Сергей","Сергеев",Gender.MALE);
         Director director2 = new Director("Олег","Петров",Gender.MALE);
@@ -32,14 +33,17 @@ public class Theatre {
         opera.printActors();
         show.printActors();
 
-        ballet.changeActorInShow(actor,actor3);
+        ballet.changeActorInShow("Иванов",actor3);
         ballet.printActors();
-        ballet.changeActorInShow(actor,actor3);
+        ballet.changeActorInShow("Иванов",actor3);
 
         //Вывод на экран текст либретто
         System.out.println();
         ballet.printLibretto();
         opera.printLibretto();
+
+        System.out.println();
+        director2.printDirectorName();
 
     }
 }

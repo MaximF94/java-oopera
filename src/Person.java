@@ -1,8 +1,9 @@
 import java.util.Objects;
 
 public class Person {
-    private String name;
-    private String surname;
+    protected String name;
+    protected String surname;
+    protected Gender gender;
 
     public Gender getGender() {
         return gender;
@@ -11,8 +12,6 @@ public class Person {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
-
-    private Gender gender;
 
     public String getName() {
         return name;
@@ -47,6 +46,15 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, surname);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender=" + gender +
+                '}';
     }
 
 }

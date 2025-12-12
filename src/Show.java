@@ -14,20 +14,37 @@ public class Show {
         }
     }
 
-    public void changeActorInShow(Actor changeableActor, Actor changeActor) {
+    public void changeActorInShow(String actorSurname, Actor changeActor) {
+        Actor changeableActor = null;
+        int countChangeableActors = 0;
+        String findSurname;
+
+        for (Actor actor : listOfActors) {
+            findSurname = actor.getSurname();
+            if (findSurname.equals(actorSurname)) {
+                changeableActor = actor;
+                countChangeableActors++;
+            }
+        }
+
+        if (countChangeableActors >= 2) {
+            System.out.println("Актеров с фамилией " + actorSurname + " больше, чем один. Замена невозможна");
+            return;
+        }
+
         if(listOfActors.contains(changeableActor)) {
             listOfActors.remove(changeableActor);
             listOfActors.add(changeActor);
         } else {
-            System.out.println("Заменяемый актер " + changeableActor.getName() + " " + changeableActor.getSurname()
-                    + " не найден в списке");
+            System.out.println("Заменяемый актер c фамилией " + actorSurname + " не найден в списке");
         }
+
     }
 
     public void printActors() {
         System.out.println("Список актеров " + this.title + ":");
         for(Actor actor : listOfActors) {
-            System.out.println(actor.getName() + " " + actor.getSurname());
+            System.out.println(actor);
         }
         System.out.println();
     }
