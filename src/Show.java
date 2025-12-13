@@ -6,6 +6,14 @@ public class Show {
     private Director director;
     private ArrayList<Actor> listOfActors;
 
+    public Show(String title, int duration, Director director) {
+        this.title = title;
+        this.duration = duration;
+        this.director = director;
+        this.director.countNumberOfShows();
+        listOfActors = new ArrayList<>();
+    }
+
     public void addActorInShow(Actor actor) {
         if(!listOfActors.contains(actor)) {
             listOfActors.add(actor);
@@ -27,7 +35,7 @@ public class Show {
             }
         }
 
-        if (countChangeableActors >= 2) {
+        if (countChangeableActors > 1) {
             System.out.println("Актеров с фамилией " + actorSurname + " больше, чем один. Замена невозможна");
             return;
         }
@@ -49,11 +57,10 @@ public class Show {
         System.out.println();
     }
 
-    public Show(String title, int duration, Director director) {
-        this.title = title;
-        this.duration = duration;
-        this.director = director;
-        this.director.countNumberOfShows();
-        listOfActors = new ArrayList<>();
+    //Печатаем имя и фамилию режиссера
+    public void printDirectorName() {
+        System.out.println(director.getName() + " " +director.getSurname());
     }
+
+
 }

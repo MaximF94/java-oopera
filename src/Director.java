@@ -9,10 +9,6 @@ public class Director extends Person {
         numberOfShows++;
     }
 
-    public void printDirectorName() {
-        System.out.println(getName() + " " +getSurname());
-    }
-
     @Override
     public String toString() {
         return "Director{" +

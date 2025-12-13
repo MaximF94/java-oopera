@@ -9,6 +9,9 @@ public class Theatre {
         Actor actress = new Actor("Мария","Иванова", Gender.FEMALE, 165);
         Director director = new Director("Сергей","Сергеев",Gender.MALE);
         Director director2 = new Director("Олег","Петров",Gender.MALE);
+
+
+
         Composer composer = new Composer("Андрей", "Андреев", Gender.MALE);
         Choreographer choreographer = new Choreographer("Анна", "Николаева", Gender.FEMALE);
 
@@ -33,6 +36,11 @@ public class Theatre {
         opera.printActors();
         show.printActors();
 
+        ballet.printDirectorName();
+        opera.printDirectorName();
+        show.printDirectorName();
+        System.out.println();
+
         ballet.changeActorInShow("Иванов",actor3);
         ballet.printActors();
         ballet.changeActorInShow("Иванов",actor3);
@@ -42,8 +50,7 @@ public class Theatre {
         ballet.printLibretto();
         opera.printLibretto();
 
-        System.out.println();
-        director2.printDirectorName();
+
 
     }
 }
